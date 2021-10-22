@@ -1,0 +1,27 @@
+@charset "utf-8";
+body {
+  scroll-behavior: smooth;
+}
+
+.full-screen-height {
+  height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+/* reset */
+html,body{height: 100%;font-size: 12px}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button,img{padding: 0; margin: 0;}
+body,textarea{background:#fff;font-family:Arial,"微软雅黑","宋体"}
+h1,h2,h3,h4,h5{font-weight: normal;}
+body,th,td,input,select,textarea,button{font-size:12px;line-height:1 ;} /* 重置页面文字属性 */
+ul,li{list-style: none;}
+img{vertical-align:top;} /* 图片在当前行内的垂直位置 */
+a:hover {text-decoration: underline;}/* 鼠标移动到链接上 */
+del,ins,a{text-decoration:none;}
+a:hover,a:active,a:focus{ text-decoration:none;} /* 取消a标签点击后的虚线框 */
+a{outline: none;transition: color 0.2s ease 0s;}/*CSS3链接秒数缓冲效果2秒*/
+/* 层板块缓冲效果CSS3       transition: all 0.3s ease 0s;   */
+.clearfix {zoom:1}
+.clearfix:after {content: '\20'; display: block; clear: both;}
