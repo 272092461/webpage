@@ -1,0 +1,83 @@
+.article {
+  max-width: 880px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555555;
+  padding: 100px 0;
+  margin: auto;
+  background: #fff;
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+.comdata {
+  background: url(../../assets//images/aboutUs/bg_1.jpg);
+  background-position: center top;
+  height: 365px;
+  display: flex;
+  align-items: center;
+  .numberWrap {
+    display: flex;
+    width: 1000px;
+
+    margin: auto;
+    justify-content: space-between;
+  }
+  .numberItem {
+    width: 210px;
+    text-align: center;
+  }
+  .number {
+    position: relative;
+    display: inline-block;
+    color: rgb(51, 51, 51);
+    font-size: 52px;
+  }
+  .numberDecor {
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    color: rgb(51, 51, 51);
+    font-size: 20px;
+  }
+  .numberText {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    padding-top: 30px;
+  }
+}
+
+.block {
+  max-width: 1200px;
+  margin: auto;
+  .blockContent {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .blockTitle {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    // padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+
+.awardWrap {
+  display: flex;
+  justify-content: space-between;
+
+  .awardItem {
+    transition: transform 0.3s;
+    transform: scale(1);
+    img {
+      width: 275px;
+      height: 200px;
+    }
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+}

@@ -26,6 +26,8 @@
 .header-wrap {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background: transparent;
   z-index: 20;
@@ -123,7 +125,7 @@
   height: 100vh;
   left: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   background: #282830;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -283,11 +285,13 @@
 .header {
   height: 50px;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pami-logo {
   display: inline-block;
-  height: 26px;
 }
 
 .pami-logo img {
@@ -330,6 +334,9 @@
   color: white;
   font-size: 30px;
   line-height: 40px;
+  
+  position: relative;
+  z-index: 10;
 }
 
 .menu>li>a {

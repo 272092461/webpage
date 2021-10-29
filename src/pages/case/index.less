@@ -1,0 +1,87 @@
+.blockBg {
+  background-color: rgb(245, 245, 245);
+}
+.block {
+  padding-top: 50px;
+  max-width: 1200px;
+  margin: auto;
+  .blockContent {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .blockTitle {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+    // padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+
+.breadCrumb {
+  font-size: 14px;
+  color: rgb(85, 85, 85);
+  &:hover {
+    color: rgb(255, 222, 59);
+  }
+}
+.contentWrap {
+  display: flex;
+  margin-top: 15px;
+
+  padding-bottom: 50px;
+
+  .listWrap {
+    flex: 1;
+    // background: #fff;
+
+    .list {
+      div:first-child {
+        order: 1;
+      }
+      div:last-child {
+        margin-left: 0;
+      }
+    }
+    .listItem {
+      background: #fff;
+      width: calc(50% - 30px);
+      margin: 15px;
+      align-items: center;
+    }
+
+    .listTitle {
+      display: block;
+      padding: 20px 0;
+      font-size: 18px;
+      &:hover {
+        color: rgb(255, 222, 59);
+      }
+    }
+
+    .listImage {
+      padding-right: 63px;
+      img {
+        width: 158px;
+        height: 197px;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    :global(.ant-pagination) {
+      text-align: center;
+    }
+
+    :global(.ant-list-items) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+    :global(.ant-list-item-meta-description) {
+      padding-right: 50px;
+      color: rgb(119, 119, 119);
+    }
+  }
+}

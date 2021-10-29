@@ -8,4 +8,10 @@ export default defineConfig({
   //   { path: '/', component: '@/pages/index' },
   // ],
   fastRefresh: {},
+  metas: [
+    {
+      name: 'viewport',
+      content: 'min-width: 1200px;',
+    },
+  ],
 });

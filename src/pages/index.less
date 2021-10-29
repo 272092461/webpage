@@ -4,7 +4,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;;
+    object-fit: cover;
     object-position: center;
   }
 }
@@ -46,7 +46,7 @@
   flex: 1;
   font-size: 14px;
   line-height: 1.5;
-  color: #A9A9A9;
+  color: #a9a9a9;
 }
 .menuTitle {
   color: #444;
@@ -58,7 +58,7 @@
   margin-bottom: 10px;
 
   &:hover {
-    color: #FFA500;
+    color: #ffa500;
   }
 }
 .menuIcon {
@@ -99,7 +99,7 @@
 
 .mainMenuTitle {
   font-size: 12px;
-  color: #ACACAC;
+  color: #acacac;
   font-weight: 400;
   line-height: 1.3;
   margin-bottom: 30px;
@@ -124,12 +124,14 @@
 
 // 经典案例
 .exampleWrap {
+  // animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
+  // animation-duration: 2s; /* don't forget to set a duration! */
   display: flex;
   justify-content: space-between;
-  &>div {
+  & > div {
     width: 262px;
   }
-  &>div:hover .exampleTitle {
+  & > div:hover .exampleTitle {
     color: rgb(236, 180, 10);
   }
 }
@@ -170,8 +172,8 @@
 }
 
 .aboutUsText {
-  width:496px;
-  height:80px;
+  width: 496px;
+  height: 80px;
   font-size: 14px;
   line-height: 1.7;
   color: #000000;
@@ -190,7 +192,7 @@
   display: flex;
   // padding-bottom: 5px;
   align-items: center;
-  &>div {
+  & > div {
     cursor: pointer;
     width: 108px;
     font-size: 16px;
@@ -226,5 +228,184 @@
 // 设计团队
 .designGroupWrap {
   display: flex;
-  
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.designGroupItem {
+  position: relative;
+  width: 263px;
+  height: 263px;
+  margin-bottom: 30px;
+}
+
+.designGroupInfo {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: scale(0);
+  transition: transform 0.3s;
+  font-weight: 400;
+  font-size: 14px;
+  & > div {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  & > span {
+    line-height: 28px;
+    text-align: center;
+    padding: 0 5px;
+  }
+}
+
+.designGroupItem:hover {
+  .designGroupInfo {
+    transform: scale(1);
+  }
+}
+
+// 优势
+.advanceWrap {
+  height: 629px;
+  background: url(../assets/images/home/goodAt.jpg);
+  background-position: center top;
+  text-align: center;
+
+  .title {
+    padding-top: 180px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: '微软雅黑', Arial, '宋体';
+  }
+
+  .desc {
+    font-size: 14px;
+    line-height: 1.7;
+    padding-top: 25px;
+    color: #888888;
+    width: 575px;
+    margin: auto;
+  }
+
+  .numberWrap {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: space-between;
+    padding-top: 70px;
+  }
+  .numberItem {
+    width: 210px;
+    text-align: center;
+  }
+  .number {
+    position: relative;
+    display: inline-block;
+    color: rgb(255, 192, 1);
+    font-size: 52px;
+  }
+  .numberDecor {
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    color: rgb(255, 192, 1);
+    font-size: 20px;
+  }
+  .numberText {
+    font-size: 14px;
+    color: #fff;
+    padding-top: 30px;
+  }
+}
+
+// 新闻动态
+.newsItem {
+  padding: 60px 96px 0 96px;
+  .newsTitle {
+    font-size: 22px;
+    color: rgb(51, 51, 51);
+  }
+  .newsDesc {
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+    padding-bottom: 50px;
+    padding-top: 15px;
+    border-bottom: 2px solid #bbb;
+    line-height: 1.3;
+  }
+
+  &:hover {
+    background: rgb(158, 164, 177);
+
+    .newsTitle,
+    .newsDesc {
+      color: #fff;
+    }
+  }
+}
+
+// 联系我们
+.contractUsWrap {
+  height: 893px;
+  background: url('../assets/images/home/map_bg.jpg');
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .contractUsContent {
+    height: 534px;
+    width: 1200px;
+    display: flex;
+    align-items: stretch;
+  }
+  .map {
+    img {
+      width: 600px;
+      height: 534px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .contractUsInfo {
+    background: rgba(255, 255, 255, 0.89);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+  }
+  .contractTitle {
+    font-size: 26px;
+    color: #333333;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .contractTip {
+    font-size: 12px;
+    line-height: 1.3;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .contractField {
+    font-size: 14px;
+    color: #333333;
+    line-height: 50px;
+  }
+  .contractIcon {
+    color: #bbb;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 10px;
+  }
 }

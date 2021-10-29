@@ -1,0 +1,33 @@
+.banner {
+  background: url(../../assets/images/subBanner.jpg);
+  height: 287px;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+.title {
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+.title::before,
+.title::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 19px;
+  height: 13px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-image: url(../../assets/images/titleDecro.png);
+  background-position: center;
+  background-size: cover;
+  left: -35px;
+}
+.title::after {
+  left: unset;
+  right: -35px;
+}
