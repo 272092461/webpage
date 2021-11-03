@@ -52,6 +52,7 @@ export default ({
 
   useEffect(() => {
     setShow(true);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
   }, []);
 

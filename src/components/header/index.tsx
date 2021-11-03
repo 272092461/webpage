@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'umi';
+import { useIntl, setLocale, getLocale } from 'umi';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 import './index.css';
 
 export function Header() {
@@ -19,6 +20,7 @@ export function Header() {
 
   const [headerClass, setClass] = useState(defaultHeader);
 
+  // 头部样式滚动控制
   useEffect(() => {
     window.addEventListener('scroll', scrollHandle);
 
@@ -26,6 +28,21 @@ export function Header() {
       window.removeEventListener('scroll', scrollHandle, false);
     };
   }, []);
+
+  // 国际化hook
+  const intl = useIntl();
+
+  const handleLang = () => {
+    const local = getLocale();
+    if (local === 'zh-CN') {
+      setLocale('en-US', false);
+    } else {
+      setLocale('zh-CN', false);
+    }
+  };
+  // const locales = getAllLocales()
+  // setLocale('zh-CN', false)
+  // debugger
 
   return (
     <div className={headerClass}>
@@ -54,57 +71,57 @@ export function Header() {
               <li>
                 <a href="/">
                   <i className="fa fa-chevron-right"></i>
-                  网站首页
+                  {intl.formatMessage({
+                    id: 'HOME_PAGE',
+                  })}
                 </a>
-                {/* <ul className="nav-children">
-                  <li>
-                    <a href="/business/reception.html"> 企业智能前台 </a>
-                  </li>
-                  <li>
-                    <a href="/business/dispatch.html"> 布控系统 </a>
-                  </li>
-                  <li>
-                    <a href="/business/property.html"> 物业系统 </a>
-                  </li>
-                  <li>
-                    <a href="/business/className.html"> 课堂点名系统 </a>
-                  </li>
-                </ul> */}
               </li>
               <li>
                 <a href="/aboutUs">
                   <i className="fa"></i>
-                  关于我们
+                  {intl.formatMessage({
+                    id: 'ABOUT_US',
+                  })}
                 </a>
               </li>
               <li>
                 <a href="/service">
                   <i className="fa"></i>
-                  服务项目
+                  {intl.formatMessage({
+                    id: 'SERVICE_PROJECT',
+                  })}
                 </a>
               </li>
               <li>
                 <a href="/case">
                   <i className="fa"></i>
-                  经典案例
+                  {intl.formatMessage({
+                    id: 'CASE',
+                  })}
                 </a>
               </li>
               <li>
                 <a href="/team">
                   <i className="fa"></i>
-                  设计团队
+                  {intl.formatMessage({
+                    id: 'DESIGN_TEAM',
+                  })}
                 </a>
               </li>
               <li>
                 <a href="/news">
                   <i className="fa"></i>
-                  新闻动态
+                  {intl.formatMessage({
+                    id: 'NEWS',
+                  })}
                 </a>
               </li>
               <li>
                 <a href="/contact">
                   <i className="fa fa-chevron-right"></i>
-                  联系我们
+                  {intl.formatMessage({
+                    id: 'CONTACT',
+                  })}
                 </a>
                 {/* <ul className="nav-children">
                   <li>
@@ -121,6 +138,9 @@ export function Header() {
                   </li>
                 </ul> */}
               </li>
+              <Button style={{ marginLeft: '10px' }} ghost onClick={handleLang}>
+                {intl.formatMessage({ id: 'LANGUAGE' })}
+              </Button>
             </ul>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, Link } from 'umi';
+import { useLocation, Link, useIntl } from 'umi';
 import styles from './index.less';
 import SubBanner from '@/components/subBanner';
 import FadeIn from '@/components/FadeIn';
@@ -81,9 +81,11 @@ export default () => {
     },
   ];
 
+  const intl = useIntl();
+
   return (
     <div>
-      <SubBanner title="经典案例" />
+      <SubBanner title={intl.formatMessage({ id: 'CASE' })} />
       <div className={styles.blockBg}>
         <div className={styles.block}>
           <div className={styles.contentWrap}>

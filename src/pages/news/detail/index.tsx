@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Breadcrumb, Image } from 'antd';
-import { Link, useLocation } from 'umi';
+import { Link, useIntl, useLocation } from 'umi';
 import styles from '../index.less';
 import detailStyles from './detail.less';
 import SubBanner from '@/components/subBanner';
@@ -40,17 +40,23 @@ export default () => {
     </>
   );
 
+  const intl = useIntl();
+
   return (
     <div>
-      <SubBanner title="新闻动态" />
+      <SubBanner title={intl.formatMessage({ id: 'NEWS' })} />
       <div className={styles.blockBg}>
         <div className={styles.block}>
           <Breadcrumb separator=">>">
             <Breadcrumb.Item href="/">
-              <span className={styles.breadCrumb}>首页</span>
+              <span className={styles.breadCrumb}>
+                {intl.formatMessage({ id: 'HOME_PAGE' })}
+              </span>
             </Breadcrumb.Item>
             <Breadcrumb.Item className={styles.breadCrumb} href="/service">
-              <span className={styles.breadCrumb}>服务项目</span>
+              <span className={styles.breadCrumb}>
+                {intl.formatMessage({ id: 'NEWS' })}
+              </span>
             </Breadcrumb.Item>
             <Breadcrumb.Item
               className={styles.breadCrumb}

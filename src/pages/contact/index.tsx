@@ -1,6 +1,7 @@
 import styles from './index.less';
 import SubBanner from '@/components/subBanner';
 import { Form, Row, Input, Col, Button } from 'antd';
+import { useIntl } from 'umi';
 
 const { TextArea } = Input;
 
@@ -11,9 +12,11 @@ export default () => {
     console.log('Received values of form: ', values);
   };
 
+  const intl = useIntl();
+
   return (
     <div className={styles.blockBg}>
-      <SubBanner title="联系我们" />
+      <SubBanner title={intl.formatMessage({ id: 'CONTACT' })} />
 
       <div className={styles.block}>
         <div className={styles.blockContent}>
@@ -31,13 +34,15 @@ export default () => {
 
       <div className={styles.contentWrap}>
         <div className={styles.infoWrap}>
-          <div className={styles.comName}>某某装修装饰有限公司</div>
+          <div className={styles.comName}>
+            {intl.formatMessage({ id: 'COM_NAME' })}
+          </div>
           <div className={styles.comLine}></div>
           <div className={styles.contentText}>
-            <p>联系电话：400-000-0000</p>
-            <p>邮箱：1234567@126.com</p>
-            <p>免费热线：400-000-0000</p>
-            <p>地址：北京市朝阳区xx大厦xxxx</p>
+            <p>{intl.formatMessage({ id: 'CONTACT_TEL' })}</p>
+            <p>{intl.formatMessage({ id: 'CONTACT_TAX' })}</p>
+            <p>{intl.formatMessage({ id: 'CONTACT_MAIL' })}</p>
+            <p>{intl.formatMessage({ id: 'CONTACT_ADDR' })}</p>
           </div>
         </div>
 
@@ -56,11 +61,13 @@ export default () => {
                   rules={[
                     {
                       required: true,
-                      message: '请输入姓名!',
+                      message: intl.formatMessage({ id: 'PLACEHOLDER' }),
                     },
                   ]}
                 >
-                  <Input placeholder="姓名" />
+                  <Input
+                    placeholder={intl.formatMessage({ id: 'FORM_NAME' })}
+                  />
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -70,11 +77,11 @@ export default () => {
                   rules={[
                     {
                       required: true,
-                      message: '请输入电话!',
+                      message: intl.formatMessage({ id: 'PLACEHOLDER' }),
                     },
                   ]}
                 >
-                  <Input placeholder="电话" />
+                  <Input placeholder={intl.formatMessage({ id: 'FORM_TEL' })} />
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -84,11 +91,13 @@ export default () => {
                   rules={[
                     {
                       required: true,
-                      message: '请输入邮箱!',
+                      message: intl.formatMessage({ id: 'PLACEHOLDER' }),
                     },
                   ]}
                 >
-                  <Input placeholder="邮箱" />
+                  <Input
+                    placeholder={intl.formatMessage({ id: 'FORM_MAIL' })}
+                  />
                 </Form.Item>
               </Col>
               <Col span={12}>
@@ -98,11 +107,13 @@ export default () => {
                   rules={[
                     {
                       required: true,
-                      message: '请输入地址!',
+                      message: intl.formatMessage({ id: 'PLACEHOLDER' }),
                     },
                   ]}
                 >
-                  <Input placeholder="地址" />
+                  <Input
+                    placeholder={intl.formatMessage({ id: 'FORM_ADDR' })}
+                  />
                 </Form.Item>
               </Col>
               <Col span={24}>
@@ -112,7 +123,7 @@ export default () => {
                   rules={[
                     {
                       required: true,
-                      message: '请输入备注!',
+                      message: intl.formatMessage({ id: 'PLACEHOLDER' }),
                     },
                   ]}
                 >
@@ -120,7 +131,7 @@ export default () => {
                     style={{ resize: 'none' }}
                     autoSize={false}
                     rows={4}
-                    placeholder="备注"
+                    placeholder={intl.formatMessage({ id: 'FORM_MEMO' })}
                   />
                 </Form.Item>
               </Col>
@@ -128,7 +139,7 @@ export default () => {
             <Row>
               <Col span={24} style={{ textAlign: 'right' }}>
                 <Button type="primary" htmlType="submit">
-                  提交留言
+                  {intl.formatMessage({ id: 'FORM_SUBMIT' })}
                 </Button>
               </Col>
             </Row>

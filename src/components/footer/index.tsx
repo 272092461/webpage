@@ -1,6 +1,10 @@
 import styles from './index.less';
+import { useIntl } from 'umi';
 
 export function Footer() {
+  // 国际化hook
+  const intl = useIntl();
+
   return (
     <div className={styles.footer}>
       <div className={styles.webInfo}>
@@ -8,12 +12,36 @@ export function Footer() {
           <img src={require('../../assets/images/logo_black.png')} />
 
           <div className={styles.linkGroup}>
-            <a href="/aboutUs">关于我们</a>
-            <a href="/service">服务项目</a>
-            <a href="/case">经典案例</a>
-            <a href="/team">设计团队</a>
-            <a href="/news">新闻动态</a>
-            <a href="/contact">联系我们</a>
+            <a href="/aboutUs">
+              {intl.formatMessage({
+                id: 'ABOUT_US',
+              })}
+            </a>
+            <a href="/service">
+              {intl.formatMessage({
+                id: 'SERVICE_PROJECT',
+              })}
+            </a>
+            <a href="/case">
+              {intl.formatMessage({
+                id: 'CASE',
+              })}
+            </a>
+            <a href="/team">
+              {intl.formatMessage({
+                id: 'DESIGN_TEAM',
+              })}
+            </a>
+            <a href="/news">
+              {intl.formatMessage({
+                id: 'NEWS',
+              })}
+            </a>
+            <a href="/contact">
+              {intl.formatMessage({
+                id: 'CONTACT',
+              })}
+            </a>
           </div>
         </div>
         <div className={styles.otherInfo}>

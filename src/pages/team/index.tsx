@@ -1,6 +1,7 @@
 import styles from './index.less';
 import SubBanner from '@/components/subBanner';
 import FadeIn from '@/components/FadeIn';
+import { useIntl } from 'umi';
 
 const DesignGroup = () => (
   <div className={styles.block}>
@@ -94,9 +95,11 @@ const DesignGroup = () => (
 );
 
 export default () => {
+  const intl = useIntl();
+
   return (
     <div>
-      <SubBanner title="设计团队" />
+      <SubBanner title={intl.formatMessage({ id: 'DESIGN_TEAM' })} />
       <DesignGroup />
     </div>
   );

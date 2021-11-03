@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, Link } from 'umi';
+import { useLocation, Link, useIntl } from 'umi';
 import styles from './index.less';
 import SubBanner from '@/components/subBanner';
 import FadeIn from '@/components/FadeIn';
@@ -87,17 +87,23 @@ export default () => {
     setShow(list);
   }, [menuIndex]);
 
+  const intl = useIntl();
+
   return (
     <div>
-      <SubBanner title="新闻动态" />
+      <SubBanner title={intl.formatMessage({ id: 'NEWS' })} />
       <div className={styles.blockBg}>
         <div className={styles.block}>
           <Breadcrumb separator=">>">
             <Breadcrumb.Item href="/">
-              <span className={styles.breadCrumb}>首页</span>
+              <span className={styles.breadCrumb}>
+                {intl.formatMessage({ id: 'HOME_PAGE' })}
+              </span>
             </Breadcrumb.Item>
             <Breadcrumb.Item className={styles.breadCrumb} href="/service">
-              <span className={styles.breadCrumb}>新闻动态</span>
+              <span className={styles.breadCrumb}>
+                {intl.formatMessage({ id: 'NEWS' })}
+              </span>
             </Breadcrumb.Item>
           </Breadcrumb>
 
